@@ -1,8 +1,8 @@
 // Problem Kth maxium and minimum character from the array
-
+// Step 1:- delete duplicates
+// Step 2:- Sort Array
+// Step 3:- Find Kth Maximum
 const kthMaximumMinmum = (arr, number) => {
-  // Step 1:-  delete duplicate from array;
-
   let uniqueArray = [];
 
   for (let char of arr) {
@@ -10,19 +10,10 @@ const kthMaximumMinmum = (arr, number) => {
       uniqueArray.push(char);
     }
   }
-
-  // step 2:- Sort array
-
   const sortedArray = uniqueArray.sort((a, b) => a - b);
-  console.log(sortedArray);
 
-  // Step 3:- Find the Kth minimum
-  const minimumKth = sortedArray[number - 1];
-  console.log(minimumKth);
-
-  // Step 4:- Find Kth maximum
-  const maximumKth = sortedArray[sortedArray.length - number];
-  console.log(maximumKth);
+  console.log("Kth Maximum is", sortedArray[uniqueArray.length - number]);
+  console.log("Kth Minimum is", sortedArray[number-1]);
 };
 
 const array = [1, 2, 4, 3, 1, 1, 2, 3, 4];
